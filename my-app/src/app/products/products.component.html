@@ -1,1 +1,66 @@
-<p>Product With ID {{ productId }} is {{ getProductStatus() }}</p>
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewProduct"
+  (click)="onProductCreate()"
+>
+  Add Product
+</button>
+<p [innerText]="allowNewProduct"></p>
+<p>{{ productCreationStatus }}</p>
+<br />
+<button class="btn btn-primary" (click)="onToggleOnOff()">Toggle</button>
+<p>{{ toggleOnOff }}</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col"><label>Product Name</label></div>
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        type="text"
+        [(ngModel)]="productName"
+      />
+    </div>
+    <div class="col">
+      <p>{{ productName }}</p>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col"><label>Product Description</label></div>
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="productDescription"
+      />
+    </div>
+    <div class="col">
+      <p>{{ productDescription }}</p>
+    </div>
+  </div>
+</div>
+
+<br /><br />
+<div class="container">
+  <div class="row">
+    <div class="col"><label>User Name</label></div>
+    <div class="col">
+      <input class="form-control" type="text" [(ngModel)]="userName" />
+    </div>
+    <div class="col">
+      <p>{{ userName }}</p>
+    </div>
+    <div class="col">
+      <button
+        class="btn btn-primary"
+        [disabled]="userName === ''"
+        (click)="userName = ''"
+      >
+        Reset
+      </button>
+    </div>
+  </div>
+</div>
+<app-product></app-product>

@@ -6,16 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
   constructor() { }
-
   ngOnInit(): void {}
+  allowNewProduct = true;
+  toggleOnOff = "Toggle Off";
+  productCreationStatus = "No Product Created!";
 
-  productId : number = 10;
-  productStatus : String = 'InStock';
-
-  getProductStatus (){
-    return this.productStatus;
+  onProductCreate(){
+    this.productCreationStatus = "Product was created!";
   }
 
+  onToggleOnOff(){
+    if(this.toggleOnOff == "Toggle Off")
+      this.toggleOnOff = "Toggle On";
+    else
+      this.toggleOnOff = "Toggle Off";
+  }
+
+  productName = "";
+  productDescription = "Default Product Description";
+
+  userName = "default";
 }
