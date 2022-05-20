@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { reduce } from 'rxjs';
 
 @Component({
   selector: 'app-product',
@@ -12,9 +13,13 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {  }
 
   productId : number = 10;
-  productStatus : String = 'InStock';
+  productStatus : String = 'In Stock';
 
   getProductStatus (){
     return this.productStatus;
+  }
+
+  getColor(){
+    return this.productStatus === "In Stock" ? "green" : "red";
   }
 }

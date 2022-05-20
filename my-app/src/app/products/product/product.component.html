@@ -1,1 +1,3 @@
-<p>Product With ID {{ productId }} is {{ getProductStatus() }}</p>
+<p [ngStyle]="{ backgroundColor: getColor() }">
+  Product With ID {{ productId }} is {{ getProductStatus() }}
+</p>
