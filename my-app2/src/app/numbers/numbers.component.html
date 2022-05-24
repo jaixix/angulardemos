@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <button (click)="showList()" class="btn btn-primary">Show</button>
+    </div>
+    <div class="col-3" *ngIf="toggleButton">
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let number of numbers"
+          [ngClass]="{ odd: number % 2 !== 0 }"
+        >
+          {{ number }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-3">
+      <div [ngSwitch]="boxNumber">
+        <p *ngSwitchCase="1">Box-1</p>
+        <p *ngSwitchCase="2">Box-2</p>
+        <p *ngSwitchCase="3">Box-3</p>
+        <p *ngSwitchDefault>Box-Default</p>
+      </div>
+    </div>
+    <div class="col-3">
+      <p appBasicHighlight>This p is using Basic Highlights!</p>
+    </div>
+  </div>
+</div>
