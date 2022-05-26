@@ -1,0 +1,37 @@
+<div class="continer m-2">
+  <div class="row">
+    <div class="col">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+          <label for="username">UserName</label>
+          <input
+            type="text"
+            id="username"
+            class="form-control"
+            ngModel
+            name="username"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">E-Mail</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            ngModel
+            name="email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="secret">Secret Questions</label>
+          <select id="secret" class="form-control" ngModel name="secret">
+            <option value="pet">Your First Pet</option>
+            <option value="car">Your First Car</option>
+          </select>
+        </div>
+        <br />
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
