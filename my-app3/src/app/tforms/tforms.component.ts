@@ -7,6 +7,9 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./tforms.component.css']
 })
 export class TformsComponent implements OnInit {
+  genders = ['Male', 'Female'];
+  defaultQuestion = 'pet';
+  submitted = false;
 
   constructor() {}
 
@@ -14,8 +17,17 @@ export class TformsComponent implements OnInit {
   }
 
   onSubmit(form : NgForm){
-    console.log(form);
-    console.log(form.value);
+    this.user.userName = form.value.userData.userName;
+    this.user.email = form.value.userData.email;
+    this.user.secret = form.value.userData.secret;
+    this.user.gender = form.value.userData.gender;
+    this.submitted = true;
   }
 
+  user = {
+    userName : '',
+    email : '',
+    secret : '',
+    gender : '',
+  }
 }

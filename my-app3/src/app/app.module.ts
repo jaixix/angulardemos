@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { CockpitComponent } from './products/cockpit/cockpit.component';
 import { ProductComponent } from './products/product/product.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NumbersComponent } from './numbers/numbers.component';
 import { BasicHighlightDirective } from './BasicHighlightDirective';
 import { BetterHighlightDirective } from './BetterHighlightDirective';
@@ -23,6 +23,10 @@ import { ObservablesComponent } from './observables/observables.component';
 import { ServersComponent } from './servers/servers.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { TformsComponent } from './tforms/tforms.component';
+import { RformsComponent } from './rforms/rforms.component';
+import { ShortenPipe } from './pipes/shorten.pipe';
+import { BlogComponent } from './blog/blog.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,8 +36,10 @@ const appRoutes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'users/:id/:name', component: UserComponent },
   { path: 'observables', component: ObservablesComponent },
-  { path:  'servers', component: ServersComponent},
-  { path:  'tforms', component: TformsComponent},
+  { path: 'servers', component: ServersComponent},
+  { path: 'tforms', component: TformsComponent},
+  { path: 'rforms', component: RformsComponent},
+  { path: 'blog', component: BlogComponent},
 ];
 
 @NgModule({
@@ -56,8 +62,11 @@ const appRoutes: Routes = [
     ServersComponent,
     FilterPipe,
     TformsComponent,
+    RformsComponent,
+    ShortenPipe,
+    BlogComponent,
   ],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes),ReactiveFormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
