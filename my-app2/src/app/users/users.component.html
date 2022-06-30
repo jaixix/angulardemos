@@ -1,0 +1,11 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <div class="list-group">
+        <a href="#" class="list-group-item" *ngFor="let user of users">
+          <app-userview [user]="user"></app-userview>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

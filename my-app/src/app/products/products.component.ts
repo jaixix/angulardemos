@@ -11,7 +11,7 @@ export class ProductsComponent implements OnInit {
   allowNewProduct = true;
   toggleOnOff = "Toggle Off";
   productCreationStatus = "No Product Created!";
-  productCreated = false;
+  productCreated = false; 
 
   onProductCreate(){
     this.productCreationStatus = "Product was created!";
